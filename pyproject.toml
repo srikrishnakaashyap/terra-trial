@@ -1,0 +1,18 @@
+[project]
+name = "terra-trial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40.0",
+    "numpy>=2.0.0",
+    "mujoco>=3.2.0",
+    "streamlit>=1.40.0",
+]
+
+[project.optional-dependencies]
+# pybullet has no prebuilt wheel and its vendored zlib fails to compile
+# against some macOS SDKs (see README) — install this extra only on a
+# machine where it's confirmed to build, e.g. the GB10.
+pybullet = ["pybullet>=3.2.6"]
